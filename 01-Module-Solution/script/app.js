@@ -4,40 +4,57 @@
     const lunchApp = angular.module('lunchApp', []);
 
     const LunchController = function($scope) {
-        
-        $scope.result = '';
 
+        const messageTooMuch = 'Too much!';
+        const messageWarning = 'Please enter data first'
+        const messageEnjoy   = 'Enjoy!';
+        
+        
         const getWordCount = function(words) {
             let wordCount = 0;
-
+            
             words.forEach(word => {
                 if (word.trim().length !== 0) wordCount++;
             });
-
+            
             return wordCount;
         }
-
+        
         const assignResult = function(counter) {
-            const enjoyableLunchItems = 3
-
+            const enjoyableLunchItems = 3;
+            
             return counter <= enjoyableLunchItems
-                ? 'Enjoy!'
-                : 'Too much';
+            ? messageEnjoy
+            : messageTooMuch;
         }
 
         const splitInput = function(input) {
             return input.split(',');
         }
+        
+        const setFontColor = function(str) {
+            if (str === messageWarning) $scope.messageStyle  = { 'color' : 'orange' };
+            if (str === messageTooMuch) $scope.messageStyle  = { 'color' : 'red' };
+            if (str === messageEnjoy)   $scope.messageStyle  = { 'color' : 'green' };
+        }
+
+        
+        $scope.result = '';
 
         $scope.getResult = function() {
+
             if (!$scope.lunchText) {
-                return $scope.result = 'Please enter data first';
+                $scope.result = 'Please enter data first';
+                return setFontColor($scope.result);
             }
 
             let result = splitInput($scope.lunchText);
             let wordCount = getWordCount(result);
 
             $scope.result = assignResult(wordCount);
+
+            setFontColor($scope.result);
+            
             $scope.lunchText = '';
         };
 
