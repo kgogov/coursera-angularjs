@@ -9,7 +9,6 @@
         const messageWarning = 'Please enter data first'
         const messageEnjoy   = 'Enjoy!';
         
-        
         const getWordCount = function(words) {
             let wordCount = 0;
             
@@ -24,8 +23,8 @@
             const enjoyableLunchItems = 3;
             
             return counter <= enjoyableLunchItems
-            ? messageEnjoy
-            : messageTooMuch;
+                ? messageEnjoy
+                : messageTooMuch;
         }
 
         const splitInput = function(input) {
@@ -33,12 +32,11 @@
         }
         
         const setFontColor = function(str) {
-            if (str === messageWarning) $scope.messageStyle  = { 'color' : 'orange' };
-            if (str === messageTooMuch) $scope.messageStyle  = { 'color' : 'red' };
-            if (str === messageEnjoy)   $scope.messageStyle  = { 'color' : 'green' };
+            if (str === messageWarning) $scope.messageStyle = { 'color' : 'orange' };
+            if (str === messageTooMuch) $scope.messageStyle = { 'color' : 'red'    };
+            if (str === messageEnjoy)   $scope.messageStyle = { 'color' : 'green'  };
         }
 
-        
         $scope.result = '';
 
         $scope.getResult = function() {
@@ -52,16 +50,13 @@
             let wordCount = getWordCount(result);
 
             $scope.result = assignResult(wordCount);
+            $scope.lunchText = '';
 
             setFontColor($scope.result);
-            
-            $scope.lunchText = '';
         };
-
     };
     
     LunchController.$inject = ['$scope'];
-
     lunchApp.controller('LunchController', LunchController);
 
 })();
