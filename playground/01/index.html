@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS App</title>
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+
+<body ng-controller="MainController">
+  <p>Helo world! My name is {{model.firstName}} {{model.lastName}}!</p>
+
+  <hr>
+
+  <p>Let's try some <strong>AngularJS</strong> features like <em>ng-model</em></p>
+
+  <p><input type="text" ng-model="vm.text"></p>
+  You've just typed: {{vm.text}}
+
+  <script src="../../libs/angular.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
