@@ -24,7 +24,7 @@
       'alert alert-warning' : vm.message == messages.lunchItemsExceeded,
       'alert alert-danger'  : vm.message == messages.emptyImput
     }">
-      {{ vm.message }}
+      <span ng-bind="vm.message"></span>
     </div>
   </div>
 
