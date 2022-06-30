@@ -1,0 +1,22 @@
+[
+  {
+    "name": "cookies",
+    "quantity": 10
+  },
+  {
+    "name": "pizzas",
+    "quantity": 2
+  },
+  {
+    "name": "milk",
+    "quantity": 3
+  },
+  {
+    "name": "chocolate",
+    "quantity": 1
+  },
+  {
+    "name": "apples",
+    "quantity": 4
+  }
+]
