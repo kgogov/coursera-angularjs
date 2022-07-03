@@ -1,0 +1,25 @@
+<div class="alert alert-warning" ng-if="foundMenuItems !== undefined && foundMenuItems.length === 0">
+  Nothing found!
+</div>
+
+<table class="table table-bordered table-striped" ng-if="foundMenuItems.length > 0">
+  <caption>Menu items</caption>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Short name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="items in foundMenuItems">
+      <td>{{items.name}}</td>
+      <td>{{items.short_name}}</td>
+      <td>{{items.description}}</td>
+      <td><button class="btn btn-default" ng-click="removeItemAction({index: $index})">{{ onBtnClickDesc }}</button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
