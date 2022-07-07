@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <caption>
+    <div>Category: {{ $ctrl.item.category.name }}</div>
+    <div>Special instructions: {{ $ctrl.item.category.special_instructions }}</div>
+  </caption>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price large</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in $ctrl.item.menu_items">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.price_large }}</td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>

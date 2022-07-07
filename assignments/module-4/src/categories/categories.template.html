@@ -1,0 +1,16 @@
+<table class="table table-hover table-categories">
+  <caption>Menu</caption>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="category in $ctrl.categories" ui-sref="items({ shortName: category.short_name })">
+      <td>{{ category.id }}</td>
+      <td>{{ category.name }}</td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
